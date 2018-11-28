@@ -1,0 +1,12 @@
+{
+  "name": "word_replace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "readdir.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.19.0"
+  }
+}
