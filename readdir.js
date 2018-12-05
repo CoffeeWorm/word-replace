@@ -8,13 +8,13 @@ program
   .version("0.1.0")
   .option("-p, --path [value]", "Add directory")
   .option("-t, --targetWord [value]", "Add target word")
-  .option("-w, --replacedWord [value]", "Add be replaced word")
+  .option("-w, --replaceWord [value]", "Add be replaced word")
   .parse(process.argv);
-if (!(program.path && program.targetWord && program.replacedWord)) {
+if (!(program.path && program.targetWord && program.replaceWord)) {
   console.log(
     `There must have 3 arguments!\r\nFor example:\r\n
-    \tnode readdir.js -p <target path> -t <target word> -w <replaced word>
-    \r\nP.S. -t support RegExp
+    \tnode readdir.js -p <target path> -t <target word> -w <replace word>
+    \r\nP.S. -t supports RegExp
     `
   );
   process.exit();
@@ -54,7 +54,7 @@ let replace = async url => {
       console.log(`Begin to replca ${filePath},\r\ncontent:\r\n${content}`);
       content = content.replace(
         new RegExp(program.targetWord, "g"),
-        program.replacedWord
+        program.replaceWord
       );
 
       console.log(`write in file ${filePath},\r\ncontent:\r\n${content}`);
